@@ -116,7 +116,7 @@ impl ColorType for TriColor {
                 if bwrbit {
                     (bit as u16) << 8
                 } else {
-                    (bit as u16) << 8 | bit as u16
+                    ((bit as u16) << 8) | bit as u16
                 },
             ),
         }
@@ -206,7 +206,7 @@ impl OctColor {
     }
     /// Converts two colors into a single byte for the Display
     pub fn colors_byte(a: OctColor, b: OctColor) -> u8 {
-        a.get_nibble() << 4 | b.get_nibble()
+        (a.get_nibble() << 4) | b.get_nibble()
     }
 
     ///Take the nibble (lower 4 bits) and convert to an OctColor if possible
