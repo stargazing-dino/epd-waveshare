@@ -467,7 +467,7 @@ where
         self.interface.cmd_with_data(
             spi,
             Command::DisplayUpdateControl1,
-            &[((red_mode as u8) << 4 | bw_mode as u8), (source as u8)],
+            &[(((red_mode as u8) << 4) | bw_mode as u8), (source as u8)],
         )
     }
 
